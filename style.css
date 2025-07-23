@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hex-grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  aspect-ratio: 1 / 1.414;
+  width: 90vmin;
+  gap: 0;
+}
+
+.hex {
+  width: 100%;
+  padding-top: 86.6%; /* Hex height based on width: tan(60°) = sqrt(3)/2 */
+  background-color: #444;
+  clip-path: polygon(
+    50% 0%, 
+    93% 25%, 
+    93% 75%, 
+    50% 100%, 
+    7% 75%, 
+    7% 25%
+  );
+  position: relative;
+  margin: -14.43% 0; /* vertical overlap correction */
+  transition: background 0.3s;
+}
+
+.hex:nth-child(even) {
+  transform: translateY(43.3%);
+}
