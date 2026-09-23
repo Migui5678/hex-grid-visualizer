@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hex Grid</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dino Runner</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="hex-grid" id="hexGrid"></div>
+  <main class="game">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">HEX GRID VISUALIZER</span>
+        <h1>Dino Runner</h1>
+      </div>
+      <div class="score" aria-live="polite">
+        <span>SCORE</span><strong id="score">00000</strong>
+      </div>
+    </header>
+    <section class="screen" aria-label="Juego del dinosaurio">
+      <div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+      <div class="dino" id="dino" aria-hidden="true"><span></span></div>
+      <div class="cactus cactus-a"></div><div class="cactus cactus-b"></div>
+      <div class="ground"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="message" id="message">PULSA ESPACIO O TOCA PARA EMPEZAR</div>
+    </section>
+    <div class="controls">
+      <button id="start" type="button">▶ Jugar</button>
+      <button id="jump" type="button">↑ Saltar</button>
+      <button id="reset" type="button">↻ Reiniciar</button>
+    </div>
+    <p class="hint">Espacio / ↑ para saltar · evita los cactus · alcanza la mayor puntuación posible</p>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
